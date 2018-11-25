@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*- 
 """
- * @Author: Jiangui Chen 
- * @Date: 2018-11-24 18:02:33 
- * @Last Modified by:   Jiangui Chen 
- * @Last Modified time: 2018-11-24 18:02:33 
- * @Desc: Implement of perceptron
+ # @Author: Jiangui Chen 
+ # @Date: 2018-11-24 18:02:33 
+ # @Last Modified by: Jiangui Chen 
+ # @Last Modified time: 2018-11-25 12:24:35 
+ # @Desc: 
 """
 
 import numpy as np
@@ -14,9 +14,9 @@ class Perceptron(object):
     r"""Perceptron is a linear model which is for binary classification.
     Perceptron can be defined by the following function:
             
-            f(x) = sign(W*x + b)
+        f(x) = sign(W*x + b)
     
-        W is called weight or weight vector, and b is callled bias
+    W is called weight or weight vector, and b is callled bias
     """
     def __init__(self, learning_rate=1, epoch=10):
         super(Perceptron, self).__init__()
@@ -90,7 +90,7 @@ class Perceptron(object):
         self._b = self._b + self._learning_rate*y
 
     def fit(self, X, y):
-        r"""Fit the perceptron label
+        r"""Fit the perceptron
         
         Args:
             X (ndarray): array-like, shape (n_samples, n_features).
@@ -100,7 +100,7 @@ class Perceptron(object):
         """
         # 1. Initialize W and b
         self._W = np.random.randn(X.shape[1])
-        # 2.
+        # 2. Train percetron
         for _ in range(self._epoch):
             output = self._forward(X)
             mis_sample_indexes = self._loss(output, y)
