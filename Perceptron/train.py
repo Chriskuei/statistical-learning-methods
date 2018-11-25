@@ -2,9 +2,9 @@
 """
  * @Author: Jiangui Chen 
  * @Date: 2018-11-24 18:12:38 
- * @Last Modified by:   Jiangui Chen 
+ * @Last Modified by: Jiangui Chen 
  * @Last Modified time: 2018-11-24 18:12:38 
- * @Desc: 
+ * @Desc: Example for using Perceptron
 """
 
 import numpy as np

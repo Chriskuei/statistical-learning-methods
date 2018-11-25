@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*- 
 """
- # @Author: Jiangui Chen 
- # @Date: 2018-11-24 18:02:33 
- # @Last Modified by: Jiangui Chen 
- # @Last Modified time: 2018-11-25 12:24:35 
- # @Desc: 
+ * @Author: Jiangui Chen 
+ * @Date: 2018-11-24 18:02:33  
+ * @Last Modified by: Jiangui Chen 
+ * @Last Modified time: 2018-11-25 12:35:57 
+ * @Desc: Implement of perceptron
 """
 
 import numpy as np
