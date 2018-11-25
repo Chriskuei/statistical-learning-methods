@@ -4,7 +4,7 @@
 ## Models
 
 - [x] Perceptron
-- [ ] KNearestNeighbor
+- [x] KNearestNeighbor
 - [ ] NaiveBayers
 - [ ] DecisionTree
 - [ ] LogisticRegression
