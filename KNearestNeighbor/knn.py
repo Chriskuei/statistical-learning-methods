@@ -155,43 +155,31 @@ class KDTree(object):
                     break
                 node = node.right
         
-        def judge_node(x, _x, k_neighors, max_distance):
-            r"""judge weather a node can be the k-nearest neighbors"""
-            # Compute distance
-            distance = self._distance(x, _x)
-            if len(k_neighors) < k:
-                k_neighors.append((node.x, distance))
-            # Replace last neighbor by new node
-            elif distance < max_distance:
-                k_neighors = sorted(k_neighors, key=lambda x: x[1])
-                k_neighors[-1] = ((node.x, distance))
-            # Update max distance
-            k_neighors = sorted(k_neighors, key=lambda x: x[1])
-            max_distance = k_neighors[-1][1]
-            return k_neighors, max_distance
-
-        k_neighors = []
-        max_distance = 0
+        neighbors = []
 
         # Stop when node is root
         while node:
             # Check current node
-            k_neighors, max_distance = judge_node(x, node.x,
-                                                  k_neighors,
-                                                  max_distance)
+            distance = self._distance(x, node.x)
+            neighbors.append((distance, node.x))
+            
             # Check sibling of current node
             if node.sibling:
                 node = node.sibling
-                k_neighors, max_distance = judge_node(x, node.x,
-                                                      k_neighors,
-                                                      max_distance)
+                distance = self._distance(x, node.x)
+                neighbors.append((distance, node.x))
+            
             # Back to father
             node = node.father
-
+        
+        import heapq
+        heapq.heapify(neighbors)
+        k_neighbors = heapq.nsmallest(k, neighbors)
+        
         # Generate distance list and index list 
         dist = []
         index = []
-        for _x, distance in k_neighors:
+        for distance, _x in k_neighbors:
             dist.append(distance)
             index.append(np.argwhere(self._data==_x)[0][0])
         
@@ -212,7 +200,6 @@ class KDTree(object):
         # Print child
         self._print(root.left, depth=depth+1)
         self._print(root.right, depth=depth+1)
-        pass 
     
     def desc(self):
         r"""print basic information of KDTreeNode"""
