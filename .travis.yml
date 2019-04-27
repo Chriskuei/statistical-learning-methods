@@ -1,0 +1,21 @@
+language: python
+
+sudo: true
+
+matrix:
+    include:
+      - os: linux
+        dist: trusty
+        python: 3.6
+      - os: osx
+        osx_image: xcode10.2
+        language: shell
+
+install: pip3 install -r requirements.txt
+
+script:
+  - python3 Perceptron/train.py
+  - python3 KNearestNeighbor/train.py
+
+after_success:
+  - codecov
