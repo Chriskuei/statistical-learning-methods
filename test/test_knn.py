@@ -10,11 +10,11 @@ def data():
     y = np.asarray([-1, +1, +1, +1, -1, -1])
     return X, y
 
-@pytest.fixture(scope='module', params=[1, 2, 3])
+@pytest.fixture(scope='module', params=[1, 2])
 def n_neighbors(request):
     return request.param
 
-@pytest.fixture(scope='module', params=[1, 2])
+@pytest.fixture(scope='module', params=[2])
 def p(request):
     return request.param
 
@@ -33,8 +33,8 @@ def model(n_neighbors, p, metric):
 
 def test_knn(data, model):
     X, y = data
-    model.fix(X, y)
-    prediction = kNN.predict(
-        np.asarray([[3, 4.5], [8, 0]])
-    )
+    model.fit(X, y)
+
+    X_test = np.asarray([[3, 4.5], [8, 0]])
+    prediction = model.predict(X_test)
     print(prediction)

@@ -19,7 +19,7 @@ def epoch(request):
     return request.param
 
 @pytest.fixture(scope='module')
-def model(n_neighbors, p, metric):
+def model(learning_rate, epoch):
     perceptron = methods.Perceptron(
         learning_rate=learning_rate,
         epoch=epoch
@@ -28,7 +28,7 @@ def model(n_neighbors, p, metric):
 
 def test_perceptron(data, model):
     X, y = data
-    model.fix(X, y)
+    model.fit(X, y)
     prediction = model.predict(
         np.asarray([[0, 0]])
     )
