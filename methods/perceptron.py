@@ -1,11 +1,4 @@
-# -*- coding:utf-8 -*-
-"""
- * @Author: Jiangui Chen
- * @Date: 2018-11-24 18:02:33
- * @Last Modified by: Jiangui Chen
- * @Last Modified time: 2018-11-25 12:35:57
- * @Desc: Implement of perceptron
-"""
+"""Implement of perceptron."""
 
 import numpy as np
 
@@ -39,7 +32,7 @@ class Perceptron(object):
         # Shape: (batch_size)
         output = np.zeros(shape=(X.shape[0]), dtype=int)
 
-        # Calculate W*x_i + b
+        # Calculate W * x_i + b
         for i, x in enumerate(X):
             out = np.sign(np.dot(self._W, x) + self._b)
             output[i] = out
@@ -66,7 +59,7 @@ class Perceptron(object):
 
         # Find out misclassified samples
         for index, (out, y_i) in enumerate(zip(output, y)):
-            # Judge y_i*(W*x_i + b) <= 0
+            # Judge y_i * (W * x_i + b) <= 0
             if out * y_i <= 0:
                 mis_sample_indexes.append(index)
 
@@ -84,8 +77,8 @@ class Perceptron(object):
                 misclassified sample.
             y (float): array-like, label of misclassified value
         """
-        # W <- w + `\eta`*y_i*x_i
-        # b <- w + `\eta`*y_i
+        # W <- w + `\eta` * y_i * x_i
+        # b <- w + `\eta` * y_i
         self._W = self._W + self._learning_rate * y * x
         self._b = self._b + self._learning_rate * y
 

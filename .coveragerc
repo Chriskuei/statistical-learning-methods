@@ -1,0 +1,14 @@
+[run]
+branch = True
+source = methods
+
+# .coveragerc to control coverage.py
+[report]
+# regrexes for lines to exclude from consideration
+exclude_lines =
+  ValueError
+  TypeError
+  NotImplementedError
+omit =
+  methods/__init__.py
+  methods/version.py

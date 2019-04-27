@@ -1,11 +1,4 @@
-# -*- coding:utf-8 -*-
-"""
- * @Author: Jiangui Chen
- * @Date: 2018-11-25 12:36:48
- * @Last Modified by: Jiangui Chen
- * @Last Modified time: 2018-11-25 12:36:48
- * @Desc: Implement of k-Nearest Neighbor
-"""
+"""k-Nearest Neighbor."""
 
 import numpy as np
 
