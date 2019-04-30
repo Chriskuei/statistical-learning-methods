@@ -34,7 +34,11 @@ def model(n_neighbors, p, metric):
 def test_knn(data, model):
     X, y = data
     model.fit(X, y)
+    print(model)
 
     X_test = np.asarray([[3, 4.5], [8, 0]])
     prediction = model.predict(X_test)
     print(prediction)
+
+    assert type(model.kdtree.data) == np.ndarray
+    model.kdtree.desc()

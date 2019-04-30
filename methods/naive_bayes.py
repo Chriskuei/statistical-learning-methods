@@ -124,10 +124,3 @@ class NaiveBayes(object):
             output[i] = out
 
         return output
-
-if __name__ == "__main__":
-    
-    nb = NaiveBayes()
-    nb.fit(X, y)
-    pre = nb.predict(np.array([[-1, -1], [1, 1]]))
-    print(pre)

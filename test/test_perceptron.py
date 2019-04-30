@@ -33,3 +33,4 @@ def test_perceptron(data, model):
         np.asarray([[0, 0]])
     )
     print(prediction)
+    assert type(model.parameters) == tuple
