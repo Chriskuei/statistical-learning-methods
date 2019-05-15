@@ -7,8 +7,8 @@
 
 - [x] Perceptron
 - [x] KNearestNeighbor
-- [ ] NaiveBayers
-- [ ] DecisionTree
+- [x] NaiveBayers
+- [x] DecisionTree
 - [ ] LogisticRegression
 - [ ] SupportVectorMachine
 - [ ] AdaBoost
