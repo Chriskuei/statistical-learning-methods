@@ -10,7 +10,7 @@
 - [x] NaiveBayers
 - [x] DecisionTree
 - [x] LogisticRegression
-- [ ] SupportVectorMachine
+- [x] SupportVectorMachine
 - [ ] AdaBoost
 - [ ] EM
 - [ ] HMM

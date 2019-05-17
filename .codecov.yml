@@ -16,4 +16,4 @@ coverage:
         paths: null
     patch:
       default:
-        threshold: 5%
+        threshold: 20%
