@@ -9,7 +9,7 @@
 - [x] KNearestNeighbor
 - [x] NaiveBayers
 - [x] DecisionTree
-- [ ] LogisticRegression
+- [x] LogisticRegression
 - [ ] SupportVectorMachine
 - [ ] AdaBoost
 - [ ] EM
